@@ -1,0 +1,102 @@
+$primary-color: rgb(212, 28, 28);
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+html {
+  background: #ccc;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 102.4px 102.4px 102.4px 102.4px 102.4px 102.4px 102.4px 102.4px 102.4px 102.4px;
+  grid-template-rows: 102.4px 102.4px 102.4px 102.4px 102.4px 102.4px 102.4px 102.4px 102.4px 102.4px;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    's0 s1 s2 s3 s4 s5 s6 s7 bz .'
+    's8 s9 s10 s11 s12 s13 s14 s15 bz .'
+    's16 s17 s18 s19 s20 s21 s22 s23 bz .'
+    's24 s25 s26 s27 s28 s29 s30 s31 . .'
+    's32 s33 s34 s35 s36 c1 c2 c3 . .'
+    'd1 d1 d1 d1 d2 d2 d2 d2 . .'
+    'd3 d3 d3 d3 o1 o1 o2 o2 . .'
+    'o3 o3 o4 o4 o5 o5 o6 o6 . .'
+    '. . . . . . . . . .'
+    '. . . . . . . . . .';
+  background: rgba(0, 0, 0, 0);
+}
+
+.bz {
+  grid-area: bz;
+}
+
+@for $i from 0 through 36 {
+  .s#{$i} {
+    grid-area: s#{$i};
+  }
+}
+
+@for $i from 1 through 3 {
+  .c#{$i} {
+    grid-area: c#{$i};
+  }
+  .d#{$i} {
+    grid-area: d#{$i};
+  }
+}
+
+@for $i from 1 through 6 {
+  .o#{$i} {
+    grid-area: o#{$i};
+  }
+}
+
+.container > div {
+  font-family: 'Roboto', sans-serif;
+  color: rgba(255, 255, 255, 1);
+  display: flex;
+  // box-sizing: border-box;
+  box-shadow: inset 0px 0px 20px 0px rgba(182, 182, 182, 0.05);
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+}
+
+// .container > div:nth-child(3n) {
+//   background: red;
+// }
+// .container > div:nth-child(3n+1) {
+//   background: green;
+// }
+// .container > div:nth-child(3n+2) {
+//   background: blue;
+// }
+
+html,
+body,
+.container {
+  height: 100%;
+  margin: 0;
+}
+
+/* For presentation only, no need to copy the code below */
+
+// .container * {
+//   // border: 1px solid red;
+//   position: relative;
+//   display: flex;
+// }
+
+/* .container *:after {
+  content: attr(class);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+} */
